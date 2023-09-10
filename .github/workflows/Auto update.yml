@@ -1,0 +1,21 @@
+name: Auto Update Document
+
+on:
+  schedule:
+    - cron: '*/2 * * * *' # 每2分钟执行一次
+
+jobs:
+  auto_update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Update Document
+      run: |
+        # 在这里添加更新文档的命令
+        echo " " >> document.txt # 在文档结尾添加一个空格
+        git add document.txt
+        git commit -m "Auto update document $(date +'%Y-%m-%d %H:%M:%S')"
+        git push
