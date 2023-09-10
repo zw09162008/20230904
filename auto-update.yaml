@@ -2,7 +2,7 @@ name: 自动提交
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */2 * * *'
 
 jobs:
   build:
