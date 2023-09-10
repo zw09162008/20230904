@@ -1,0 +1,25 @@
+name: Modify File and Commit
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 每隔五分钟执行一次
+
+jobs:
+  modify_and_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Modify file.txt and Commit
+      run: |
+        # 添加一个空格到 file.txt 的末尾
+        echo " " >> file.txt
+
+        # 提交修改
+        git config --global user.name "Your Name"
+        git config --global user.email "youremail@example.com"
+        git add file.txt
+        git commit -m "Add a space to file.txt"
+        git push
