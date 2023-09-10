@@ -2,7 +2,7 @@ name: Modify File and Commit
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # 每隔五分钟执行一次
+    - cron: '0 */3 * * *'  # 每隔五分钟执行一次
 
 jobs:
   modify_and_commit:
