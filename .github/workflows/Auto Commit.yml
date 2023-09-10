@@ -2,7 +2,7 @@ name: Auto Commit
 
 on:
   schedule:
-    - cron: '*/2 * * * *' # 每隔四个小时执行一次，可以根据需要进行调整
+    - cron: '*/1 * * * *' # 每隔四个小时执行一次，可以根据需要进行调整
 
 jobs:
   auto_commit:
